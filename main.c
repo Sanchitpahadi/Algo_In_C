@@ -1,6 +1,3 @@
-#include<stdio.h>
-#include <stdlib.h>
-
 #include "linkedList.h"
 typedef struct {int x; int y;}player;
 

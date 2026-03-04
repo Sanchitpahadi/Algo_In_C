@@ -1,3 +1,5 @@
-cpp
-.gitignore
-
+*.exe
+*.o
+*.bin
+*.out
+sanc.txt
