@@ -1,7 +1,30 @@
 #ifndef TREE_H
 #define TREE_H
 
+/*
+//be carefull its quite hard make sure u go slow and 
+// keep  a  notecopy to make sure u are doing it right
 
+    Node *root = NULL;
+  
+
+    for(int i =0 ; i <20;i++)
+    {
+    root =  insert_t(root,i);
+    }
+
+    int found = search(root,19);
+    root =delete_tn(root,15);
+    root =delete_tn(root,16);
+    root =delete_tn(root,17);
+
+    printf(" if find print 1 %d",found);
+    
+    inorder(root);
+
+
+
+*/
 typedef struct Node
 {
     int data;
@@ -50,15 +73,20 @@ int search(Node * root, int target)
         return search(root->right,target);
     }
 }
-
+Node *find_min(Node *root)
+{
+    while (root->left != NULL)
+        root = root->left;
+    return root;
+}
 Node * delete_tn(Node *root,int target)
 {
-    if(root==NULL){return;}
+    if(root==NULL){return NULL;}
     if(root->data > target)
     {
         root->left = delete_tn(root->left,target);
     }
-    else if(rooot->data < target)
+    else if(root->data < target)
     {
         root->right = delete_tn(root->right,target);
     }
@@ -83,7 +111,7 @@ Node * delete_tn(Node *root,int target)
         }
         Node *successor = find_min(root->right);
         root->data      = successor->data;
-        root->right     = delete_node(root->right, successor->data);        
+        root->right     = delete_tn(root->right, successor->data);        
     }
     
     return root;
