@@ -1,3 +1,48 @@
+#ifndef LINKEDLIST_H     
+#define LINKEDLIST_H
+
+/*
+   
+   //  paste this in youtr main loop
+
+    // created linked list with head and size
+
+    linkedList * list = create_linkedList();
+
+    // pushed back the number and if checked its first
+    //  or not if it is the head will point towards the first node
+
+    back_ll(list, 10);
+    back_ll(list, 20);
+    back_ll(list, 30);
+    back_ll(list, 40);
+    back_ll(list, 50);
+    back_ll(list, 60);
+
+    //print the list lol
+    print_ll(list);
+
+    // find the list from the linked list you just created
+
+    find_n_ll(list,50);
+
+   // replace_n_ll(linkedList * list,target,replaced);
+   //  now i guess i dont have to say much
+    replace_n_ll(list,50,80);
+
+    print_ll(list);
+   
+    // this function will just add in front like it will point new  node and the old one will be
+    //  pointed by new it needs a temprorary node which is also usefull 
+    add_infron_ll(list,1);
+
+    print_ll(list);
+
+
+
+*/
+
+
 
 typedef struct Node {
     int data;    

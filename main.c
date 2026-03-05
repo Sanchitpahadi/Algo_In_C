@@ -1,27 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#include"linkedList.h"
+#include "tree.h"
 
 int main()
 {
-    linkedList * list = create_linkedList();
-    back_ll(list, 10);
-    back_ll(list, 20);
-    back_ll(list, 30);
-    back_ll(list, 40);
-    back_ll(list, 50);
-    back_ll(list, 60);
+    Node *root = NULL;
+  
 
-    print_ll(list);
+    for(int i =0 ; i <20000;i++)
+    {
+    root =  insert_t(root,i);
+    }
 
-    find_n_ll(list,50);
+    int found = search(root,1999);
 
-    replace_n_ll(list,50,80);
-    print_ll(list);
+    printf(" if find print 1 %d",found);
+    
+    inorder(root);
 
-    add_infron_ll(list,1);
-    print_ll(list);
+
+
+
+
+
 
     return 0;
 }
