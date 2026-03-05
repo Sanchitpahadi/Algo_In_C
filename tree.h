@@ -56,17 +56,37 @@ Node * delete_tn(Node *root,int target)
     if(root==NULL){return;}
     if(root->data > target)
     {
-        return delete_tn(root->left,target);
+        root->left = delete_tn(root->left,target);
     }
     else if(rooot->data < target)
     {
-        return delete_tn(root->right,target);
+        root->right = delete_tn(root->right,target);
     }
     else
     {
-
+        if(root->left == NULL && root->right == NULL)
+        {
+            free(root);
+            return NULL;
+        }
+        if (root->left == NULL)
+        {
+            Node *temp = root->right;
+            free(root);
+            return temp;
+        }
+        if (root->right == NULL)
+        {
+            Node *temp = root->left;
+            free(root);
+            return temp;
+        }
+        Node *successor = find_min(root->right);
+        root->data      = successor->data;
+        root->right     = delete_node(root->right, successor->data);        
     }
-
+    
+    return root;
 }
 
 void inorder(Node * root)
