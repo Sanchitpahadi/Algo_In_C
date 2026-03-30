@@ -1,6 +1,8 @@
 #ifndef LINKEDLIST_H     
 #define LINKEDLIST_H
 
+
+
 /*
    
    //  paste this in youtr main loop
@@ -170,3 +172,4 @@ void print_ll(linkedList *list)
 
     }
 
+#endif
